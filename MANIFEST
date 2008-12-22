@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/CPAN-MirrorStatus.t
+lib/CPAN/MirrorStatus.pm

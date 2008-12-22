@@ -1,0 +1,6 @@
+Revision history for Perl extension CPAN::MirrorStatus.
+
+0.01  Wed Dec 10 21:59:47 2008
+	- original version; created by h2xs 1.23 with options
+		-X -n CPAN::MirrorStatus
+
