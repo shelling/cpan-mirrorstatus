@@ -5,7 +5,12 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'CPAN::MirrorStatus',
     VERSION_FROM      => 'lib/CPAN/MirrorStatus.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => {
+            "selfvars"              =>  0,
+            "Rubyish::Attribute"    =>  0,
+            "LWP::Simple"           =>  0,
+    }, 
+    AUTHOR            => 'shelling <shelling@cpan.org>',
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/CPAN/MirrorStatus.pm', # retrieve abstract from module
        AUTHOR         => '許 家瑋 <shelling@apple.com>') : ()),

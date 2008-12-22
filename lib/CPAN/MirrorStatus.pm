@@ -4,9 +4,46 @@ use 5.008008;
 use strict;
 use warnings;
 
-our @ISA = qw(Exporter);
-
 our $VERSION = '0.01';
+
+use LWP::Simple;
+use Rubyish::Attribute;
+use selfvars;
+
+# configurable attributions
+# each attribution would be setted in constructor
+my @attr = qw(catch location target);
+my $default = {
+    catch       => "60",
+    location    => "/tmp/cpan-mirrorstatus.tmp",
+    target      => "cpan.nctu.edu.tw",
+};
+
+# define setter of configurable attribution
+attr_accessor @attr;
+
+
+sub new {
+    my ($class,$args) = @_;
+    my $self = bless {}, $class;
+    for (@attr) {
+        $self->{$_} = $args->{$_} ? $args->{$_} : $default->{$_};
+    }
+}
+
+sub query {
+    my () = @args;
+
+}
+
+sub render {
+    my ($format) = @args;
+    give ($format) {
+        when ($format eq "widget")  {  }
+        when ($format eq "json")    {  }
+        default                     {  }
+    }
+}
 
 
 1;
