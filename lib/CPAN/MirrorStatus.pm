@@ -4,34 +4,10 @@ use 5.008008;
 use strict;
 use warnings;
 
-require Exporter;
-use AutoLoader qw(AUTOLOAD);
-
 our @ISA = qw(Exporter);
-
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-
-# This allows declaration	use CPAN::MirrorStatus ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
-our %EXPORT_TAGS = ( 'all' => [ qw(
-	
-) ] );
-
-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-
-our @EXPORT = qw(
-	
-);
 
 our $VERSION = '0.01';
 
-
-# Preloaded methods go here.
-
-# Autoload methods go after =cut, and are processed by the autosplit program.
 
 1;
 __END__
@@ -39,12 +15,17 @@ __END__
 
 =head1 NAME
 
-CPAN::MirrorStatus - Perl extension for blah blah blah
+CPAN::MirrorStatus - querying mirrors status from mirrors.cpan.org
 
 =head1 SYNOPSIS
 
   use CPAN::MirrorStatus;
-  blah blah blah
+
+  $q = CPAN::MirrorStatus->new;
+  $q->target("cpan.nctu.edu.tw"); #=> set query target as cpan.nctu.edu.tw
+  $q->query;
+  $q->render("json");   #=> output json 
+  $q->render("widget"); #=> output javascript 
 
 =head1 DESCRIPTION
 
